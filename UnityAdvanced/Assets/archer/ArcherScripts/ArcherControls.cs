@@ -52,5 +52,6 @@ public class ArcherControls : MonoBehaviour {
             anim.SetBool("isRun", false);
             anim.SetBool("isIdle", true);
         }
-	}
+        
+    }
 }
