@@ -6,7 +6,7 @@ public class ArcherControls : MonoBehaviour {
 
     static Animator anim;
     public float speed = 10.0f;
-    public float rotSpeed = 100.0f;
+    public float rotSpeed = 150.0f;
 
 	// Use this for initialization
 	void Start () {
