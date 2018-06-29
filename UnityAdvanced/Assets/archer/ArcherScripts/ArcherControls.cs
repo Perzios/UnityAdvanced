@@ -32,6 +32,10 @@ public class ArcherControls : MonoBehaviour {
             anim.SetTrigger("isJumpBack");
         }
 
+        if (Input.GetButtonDown("Fire1")) {
+            anim.SetTrigger("isShoot");
+        }
+
         if (translation > 0)
         {
             anim.SetBool("isRun", true);
