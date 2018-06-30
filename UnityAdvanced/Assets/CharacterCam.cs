@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacterCam : MonoBehaviour {
 
-    public Camera cam;
+    public Camera cam, cam2;
 
 	// Use this for initialization
 	void Start () {
@@ -13,9 +13,16 @@ public class CharacterCam : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        var CharacterRot = cam.transform.rotation;
-        CharacterRot.x = 0;
-        CharacterRot.z = 0;
-        transform.rotation = CharacterRot;
+        if (cam.isActiveAndEnabled) {
+            var CharacterRot = cam.transform.rotation;
+            CharacterRot.x = 0;
+            CharacterRot.z = 0;
+            transform.rotation = CharacterRot;
+        } else if (cam2.isActiveAndEnabled) {
+            var CharacterRot = cam2.transform.rotation;
+            CharacterRot.x = 0;
+            CharacterRot.z = 0;
+            transform.rotation = CharacterRot;
+        }        
     }
 }

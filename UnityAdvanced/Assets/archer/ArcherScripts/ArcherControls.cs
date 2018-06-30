@@ -11,6 +11,7 @@ public class ArcherControls : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         anim = GetComponent<Animator>();
+        Cursor.lockState = CursorLockMode.Locked;
 	}
 	
 	// Update is called once per frame
@@ -53,6 +54,9 @@ public class ArcherControls : MonoBehaviour {
             anim.SetBool("isRun", false);
             anim.SetBool("isIdle", true);
         }
-        
+
+        if (Input.GetKeyDown("escape")) {
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
 }
