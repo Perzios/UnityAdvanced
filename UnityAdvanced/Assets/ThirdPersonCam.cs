@@ -38,6 +38,6 @@ public class ThirdPersonCam : MonoBehaviour {
         Quaternion rot;
         rot = Quaternion.Euler(currentY, currentX, 0);
         camTransform.position = lookAt.position + rot * dir;        
-        camTransform.LookAt(lookAt.position);
+        camTransform.LookAt(lookAt.position);        
     }
 }
