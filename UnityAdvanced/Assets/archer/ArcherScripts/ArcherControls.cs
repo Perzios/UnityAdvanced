@@ -18,8 +18,11 @@ public class ArcherControls : MonoBehaviour {
 	void Update () {
 
         float translation = Input.GetAxis("Vertical") * speed;
+        float rot = Input.GetAxis("Horizontal") * rotSpeed;
         translation *= Time.deltaTime;
+        rot *= Time.deltaTime;
         transform.Translate(0, 0, translation);
+        transform.Rotate(0,rot,0);
 
         if (Input.GetButtonDown("Jump") && translation == 0)
         {

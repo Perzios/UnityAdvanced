@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacterCam : MonoBehaviour {
 
-    public Camera cam, cam2;
+    public Camera cam, cam2, cam3;
 
 	// Use this for initialization
 	void Start () {
