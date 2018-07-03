@@ -21,7 +21,7 @@ public class ArcherControls : MonoBehaviour {
         float rot = Input.GetAxis("Horizontal") * rotSpeed;
         translation *= Time.deltaTime;
         rot *= Time.deltaTime;
-        transform.Translate(0, 0, translation);
+        transform.Translate(0,0,translation);
         transform.Rotate(0,rot,0);
 
         if (Input.GetButtonDown("Jump") && translation == 0)
@@ -45,6 +45,7 @@ public class ArcherControls : MonoBehaviour {
             anim.SetBool("isRun", true);
             anim.SetBool("isRunBack", false);
             anim.SetBool("isIdle", false);
+
         }
         else if (translation < 0)
         {
@@ -53,9 +54,9 @@ public class ArcherControls : MonoBehaviour {
             anim.SetBool("isIdle", false);
         }
         else {
-            anim.SetBool("isRunBack", false);
-            anim.SetBool("isRun", false);
-            anim.SetBool("isIdle", true);
+                anim.SetBool("isRunBack", false);
+                anim.SetBool("isRun", false);
+                anim.SetBool("isIdle", true);
         }
 
         if (Input.GetKeyDown("escape")) {

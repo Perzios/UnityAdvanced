@@ -250,7 +250,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &130403129
 AudioListener:
   m_ObjectHideFlags: 0
@@ -307,12 +307,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 130403128}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -5.36, y: 3.19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 389989300}
-  m_RootOrder: 3
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &130403133
 MonoBehaviour:
@@ -327,7 +327,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 389989298}
   dist: 0
-  height: 2
 --- !u!1 &134560386
 GameObject:
   m_ObjectHideFlags: 0
@@ -1012,7 +1011,6 @@ Transform:
   - {fileID: 324234540}
   - {fileID: 1484488238}
   - {fileID: 1905833143}
-  - {fileID: 130403132}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1525,7 +1523,7 @@ Prefab:
       objectReference: {fileID: 389989300}
     - target: {fileID: 1302566606628214, guid: 641daeb25836f9f49808f4ba03381274, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 641daeb25836f9f49808f4ba03381274, type: 2}
