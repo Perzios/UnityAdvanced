@@ -13,7 +13,9 @@ public class Player : MonoBehaviour {
     }
 
     [SerializeField]
-    float speed;
+    float runSpeed;
+    [SerializeField]
+    float Aimspeed;
     [SerializeField]
     MouseInput MouseControl;
 
@@ -31,12 +33,23 @@ public class Player : MonoBehaviour {
     
 	void Awake () {
         playerInput = GameManager.Instance.InputController;
-
+        Cursor.lockState = CursorLockMode.Locked;
     }
 	
 	// Update is called once per frame
 	void Update () {
-        Vector2 dir = new Vector2(playerInput.Vertical * speed, playerInput.Horizontal * speed);
+        float moveSpeed = runSpeed;
+
+        if (playerInput.isAim) {
+            moveSpeed = Aimspeed;
+        }
+
+        Vector2 dir = new Vector2(playerInput.Vertical * moveSpeed, playerInput.Horizontal * moveSpeed);
         MoveController.Move(dir);
-	}
+
+        if (Input.GetKeyDown("escape"))
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+    }
 }

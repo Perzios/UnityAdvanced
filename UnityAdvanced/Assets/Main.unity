@@ -1057,7 +1057,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 788cf3ecc1b995543b887d88372900f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  runSpeed: 10
+  Aimspeed: 5
   MouseControl:
     Damping: {x: 0, y: 0}
     Sensitivity: {x: 0, y: 0}

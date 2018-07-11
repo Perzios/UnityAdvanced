@@ -14,5 +14,7 @@ public class PlayerAnimation : MonoBehaviour {
 	void Update () {
         animator.SetFloat("Vertical", GameManager.Instance.InputController.Vertical);
         animator.SetFloat("Horizontal", GameManager.Instance.InputController.Horizontal);
+        animator.SetBool("isJump", GameManager.Instance.InputController.isJump);
+        animator.SetBool("isAim", GameManager.Instance.InputController.isAim);
     }
 }

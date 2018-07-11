@@ -5,8 +5,8 @@ using UnityEngine;
 public class MoveController : MonoBehaviour {
 
     public void Move(Vector2 dir) {
-        transform.position += transform.forward * dir.x * Time.deltaTime +
-            transform.right * dir.y * Time.deltaTime;
+        transform.position += (transform.forward * dir.x * Time.deltaTime +
+            transform.right * dir.y * Time.deltaTime);
     }
 
 }
