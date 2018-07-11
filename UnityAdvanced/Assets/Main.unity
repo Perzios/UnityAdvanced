@@ -1058,7 +1058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runSpeed: 10
-  Aimspeed: 5
+  Aimspeed: 3
   MouseControl:
     Damping: {x: 0, y: 0}
     Sensitivity: {x: 0, y: 0}
