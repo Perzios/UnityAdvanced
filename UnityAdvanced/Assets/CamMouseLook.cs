@@ -5,7 +5,7 @@ using UnityEngine;
 public class CamMouseLook : MonoBehaviour {
 
     Vector2 mouseLook , smoothV;
-    public float sens = 5.0f, smooth = 2.0f;
+    public float sens = 5.0f, smooth = 5.0f;
 
     GameObject toon;
 
@@ -16,13 +16,13 @@ public class CamMouseLook : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		var md = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
+        var md = GameManager.Instance.InputController.Mouseinput;
         md = Vector2.Scale(md,new Vector2(sens*smooth, sens*smooth));
         smoothV.x = Mathf.Lerp(smoothV.x,md.x,1f/smooth);
         smoothV.y = Mathf.Lerp(smoothV.y, md.y, 1f / smooth);
         mouseLook += smoothV;
-        mouseLook.y = Mathf.Clamp(mouseLook.y, -70f , 70f);
+        mouseLook.y = Mathf.Clamp(mouseLook.y, -70f , 60f);
         transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
-        toon.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, toon.transform.up);
+        toon.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, toon.transform.up) ;
     }
 }

@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class InputController : MonoBehaviour {
 
-    public float Vertical, Horizontal;
+    public float Vertical, Horizontal,Shoot;
     public Vector2 Mouseinput;
     public bool isJump;
     public bool isAim;
+    public volatile bool isShoot;
 
     void Update()
     {
@@ -17,5 +18,12 @@ public class InputController : MonoBehaviour {
 
         isJump = Input.GetButton("Jump");
         isAim = Input.GetButton("Fire2");
+        if (isAim && Input.GetButton("Fire1"))
+        {
+            isShoot = true;
+        }
+        else {
+            isShoot = false;
+        }
     }
 }

@@ -16,5 +16,7 @@ public class PlayerAnimation : MonoBehaviour {
         animator.SetFloat("Horizontal", GameManager.Instance.InputController.Horizontal);
         animator.SetBool("isJump", GameManager.Instance.InputController.isJump);
         animator.SetBool("isAim", GameManager.Instance.InputController.isAim);
+        animator.SetBool("Shoot", GameManager.Instance.InputController.isShoot);
+        
     }
 }
