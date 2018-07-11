@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ThirdPersonCam : MonoBehaviour {
 
-    private const float Y_ANGLE_MIN = 10.0f;
-    private const float Y_ANGLE_MAX = 50.0f;
+    private const float Y_ANGLE_MIN = 6.0f;
+    private const float Y_ANGLE_MAX = 40.0f;
 
     public Transform lookAt;
     public Transform camTransform;
@@ -26,7 +26,7 @@ public class ThirdPersonCam : MonoBehaviour {
     private void Update()
     {
         currentX += Input.GetAxis("Mouse X") * sensitivityX;
-        currentY += Input.GetAxis("Mouse Y") * sensitivityY;
+        currentY -= Input.GetAxis("Mouse Y") * sensitivityY;
         dist -= Input.GetAxis("Mouse ScrollWheel");
         currentY = Mathf.Clamp(currentY,Y_ANGLE_MIN,Y_ANGLE_MAX);
         dist = Mathf.Clamp(dist, 5.0f, 12.0f);
