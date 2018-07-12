@@ -12,12 +12,16 @@ public class Player : MonoBehaviour {
         public Vector2 Sensitivity;
     }
 
+    Vector2 mouseI;
+
     [SerializeField]
     float runSpeed;
     [SerializeField]
     float Aimspeed;
     [SerializeField]
     MouseInput MouseControl;
+
+    public PlayerAim playerAim;
 
     private MoveController m_MoveController;
     public MoveController MoveController {
@@ -33,6 +37,7 @@ public class Player : MonoBehaviour {
     
 	void Awake () {
         playerInput = GameManager.Instance.InputController;
+        GameManager.Instance.LocalPlayer = this;
         Cursor.lockState = CursorLockMode.Locked;
     }
 	
@@ -44,8 +49,12 @@ public class Player : MonoBehaviour {
             moveSpeed = Aimspeed;
         }
 
+        mouseI = GameManager.Instance.InputController.Mouseinput;
+
         Vector2 dir = new Vector2(playerInput.Vertical * moveSpeed, playerInput.Horizontal * moveSpeed);
         MoveController.Move(dir);
+
+        playerAim.setRotation(mouseI.y * MouseControl.Sensitivity.y);
 
         if (Input.GetKeyDown("escape"))
         {
