@@ -31,6 +31,9 @@ public class PlayerAnimation : MonoBehaviour {
         if (GameManager.Instance.InputController.isAim)
         {
             animator.SetFloat("AimAngle", PlayerAim.getAngle());
+            if (GameManager.Instance.InputController.isShoot) {
+                animator.SetFloat("isShoot", 0);
+            }
         }
         else {
             animator.SetFloat("AimAngle", 0.0f);
