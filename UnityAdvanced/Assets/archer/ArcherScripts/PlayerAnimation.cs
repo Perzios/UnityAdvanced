@@ -6,8 +6,6 @@ public class PlayerAnimation : MonoBehaviour {
 
     Animator animator;
 
-    public bool eq = false;
-
     private PlayerAim m_PlayerAim;
     private PlayerAim PlayerAim {
         get {
@@ -29,22 +27,6 @@ public class PlayerAnimation : MonoBehaviour {
         animator.SetBool("isJump", GameManager.Instance.InputController.isJump);
         animator.SetBool("isAim", GameManager.Instance.InputController.isAim);
         animator.SetBool("Shoot", GameManager.Instance.InputController.isShoot);
-        animator.SetBool("isEquip", GameManager.Instance.InputController.isEquip);
-
-        if (GameManager.Instance.InputController.Equip == true && eq == false)
-        {
-            eq = true;
-            animator.SetBool("isEquip", true);
-            animator.SetFloat("Equip", -1.0f);
-        }
-        else if (GameManager.Instance.InputController.Equip == false && eq == true)
-        {
-            eq = false;
-            animator.SetBool("isEquip", true);
-            animator.SetFloat("Equip", 1.0f);
-        }
-
-        
 
         if (GameManager.Instance.InputController.isAim)
         {
@@ -54,7 +36,6 @@ public class PlayerAnimation : MonoBehaviour {
             }
         }
         else {
-            animator.SetFloat("Equip", 0.0f);
             animator.SetFloat("AimAngle", 0.0f);
         }
         

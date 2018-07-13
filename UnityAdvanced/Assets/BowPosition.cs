@@ -6,7 +6,6 @@ public class BowPosition : MonoBehaviour {
 
     [SerializeField]
     Transform hand;
-    
 
 
     void Awake()
