@@ -25,7 +25,7 @@ public class GameManager{
     public InputController InputController {
         get {
             if (m_InputController == null) {
-                m_InputController = gObject.GetComponent<InputController>();
+                m_InputController = gObject.GetComponent<InputController>();                
             }
             return m_InputController;
         }

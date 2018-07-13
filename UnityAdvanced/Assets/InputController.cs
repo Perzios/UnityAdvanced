@@ -8,7 +8,14 @@ public class InputController : MonoBehaviour {
     public Vector2 Mouseinput;
     public bool isJump;
     public bool isAim;
+    public bool Equip = false;
     public volatile bool isShoot;
+    public GameObject bow;
+
+    private void Awake()
+    {
+        bow = GameObject.FindGameObjectWithTag("Bow");
+    }
 
     void Update()
     {
@@ -18,6 +25,31 @@ public class InputController : MonoBehaviour {
 
         isJump = Input.GetButton("Jump");
         isAim = Input.GetButton("Fire2");
+
+        if (Input.GetButtonDown("Equip") && Equip == false)
+        {
+            Equip = true;
+        }
+        else if (Input.GetButtonDown("Equip") && Equip == true)
+        {
+            Equip = false;
+        }
+        else if (isAim)
+        {
+            Equip = true;
+        }
+
+
+        if (Equip == false && isAim != true)
+        {
+            bow.SetActive(false);
+        }
+        else if (Equip == true)
+        {
+            Equip = true;
+            bow.SetActive(true);
+        }
+
         if (isAim && Input.GetButton("Fire1"))
         {
             isShoot = true;
@@ -25,5 +57,7 @@ public class InputController : MonoBehaviour {
         else {
             isShoot = false;
         }
+
+        
     }
 }
