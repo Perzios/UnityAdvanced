@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InputController : MonoBehaviour {
+public class InputController : MonoBehaviour
+{
 
-    public float Vertical, Horizontal,Shoot;
+    public float Vertical, Horizontal, Shoot;
     public Vector2 Mouseinput;
     public bool isJump;
     public bool isAim;
@@ -15,13 +16,14 @@ public class InputController : MonoBehaviour {
     private void Awake()
     {
         bow = GameObject.FindGameObjectWithTag("Bow");
+        bow.SetActive(false);
     }
 
     void Update()
     {
         Vertical = Input.GetAxis("Vertical");
         Horizontal = Input.GetAxis("Horizontal");
-        Mouseinput = new Vector2(Input.GetAxisRaw("Mouse X") , Input.GetAxisRaw("Mouse Y"));
+        Mouseinput = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
 
         isJump = Input.GetButton("Jump");
         isAim = Input.GetButton("Fire2");
@@ -40,25 +42,33 @@ public class InputController : MonoBehaviour {
             Equip = true;
         }
 
-
         if (Equip == false && isAim != true)
         {
-            bow.SetActive(false);
+            StartCoroutine(Example(Equip));
+            //bow.SetActive(false);
         }
         else if (Equip == true)
         {
-            bow.SetActive(true);
+            StartCoroutine(Example(Equip));
+            //bow.SetActive(true);
         }
+
+
+
 
         if (isAim && Input.GetButton("Fire1"))
         {
             isShoot = true;
         }
-        else {
+        else
+        {
             isShoot = false;
         }
-
-        
     }
-    
+
+    IEnumerator Example(bool choose)
+    {
+        yield return new WaitForSecondsRealtime(0.5f);
+        bow.SetActive(choose);
+    }
 }
