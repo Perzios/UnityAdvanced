@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour {
 
-    Animator animator;
+    Animator animator, bowAnim;
 
     public bool eq = false;
 
@@ -20,6 +20,7 @@ public class PlayerAnimation : MonoBehaviour {
 
 	void Awake () {
         animator = GetComponentInChildren<Animator>();
+        bowAnim = GameObject.FindGameObjectWithTag("Bow").GetComponentInChildren<Animator>();
     }
 	
 	// Update is called once per frame
@@ -30,6 +31,9 @@ public class PlayerAnimation : MonoBehaviour {
         animator.SetBool("isAim", GameManager.Instance.InputController.isAim);
         animator.SetBool("Shoot", GameManager.Instance.InputController.isShoot);
         animator.SetBool("isEquip", GameManager.Instance.InputController.isEquip);
+
+        bowAnim.SetBool("Load", GameManager.Instance.InputController.isAim);
+        bowAnim.SetBool("Fire", GameManager.Instance.InputController.isShoot);
 
         if (GameManager.Instance.InputController.Equip == true && eq == false)
         {
