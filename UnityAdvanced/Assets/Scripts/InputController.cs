@@ -27,13 +27,16 @@ public class InputController : MonoBehaviour
 
         isJump = Input.GetButton("Jump");
         isAim = Input.GetButton("Fire2");
-        isEquip = Input.GetButtonDown("Equip");
 
-        if (Input.GetButtonDown("Equip") && Equip == false)
+        if (!isAim) {
+            isEquip = Input.GetButtonDown("Equip");
+        }
+
+        if (isEquip && Equip == false)
         {
             Equip = true;
         }
-        else if (Input.GetButtonDown("Equip") && Equip == true)
+        else if (isEquip && Equip == true)
         {
             Equip = false;
         }

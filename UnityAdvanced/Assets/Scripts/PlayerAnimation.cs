@@ -35,13 +35,13 @@ public class PlayerAnimation : MonoBehaviour {
         bowAnim.SetBool("Load", GameManager.Instance.InputController.isAim);
         bowAnim.SetBool("Fire", GameManager.Instance.InputController.isShoot);
 
-        if (GameManager.Instance.InputController.Equip == true && eq == false)
+        if (GameManager.Instance.InputController.Equip == true && eq == false && GameManager.Instance.InputController.isAim)
         {
             eq = true;
             animator.SetBool("isEquip", true);
             animator.SetFloat("Equip", -1.0f);
         }
-        else if (GameManager.Instance.InputController.Equip == false && eq == true)
+        else if (GameManager.Instance.InputController.Equip == false && eq == true && !GameManager.Instance.InputController.isAim)
         {
             eq = false;
             animator.SetBool("isEquip", true);
