@@ -48,12 +48,10 @@ public class InputController : MonoBehaviour
         if (Equip == false && isAim != true)
         {
             StartCoroutine(Example(Equip));
-            //bow.SetActive(false);
         }
         else if (Equip == true)
         {
             StartCoroutine(Example(Equip));
-            //bow.SetActive(true);
         }
 
 
