@@ -11,12 +11,17 @@ public class InputController : MonoBehaviour
     public bool isAim;
     public bool Equip = false, isEquip;
     public volatile bool isShoot;
-    public GameObject bow;
+    public GameObject bow, backBow;
+
+    
 
     private void Awake()
     {
         bow = GameObject.FindGameObjectWithTag("Bow");
         bow.SetActive(false);
+
+        backBow = GameObject.FindGameObjectWithTag("Back");
+        backBow.SetActive(true);
     }
 
     void Update()
@@ -71,5 +76,6 @@ public class InputController : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(0.5f);
         bow.SetActive(choose);
+        backBow.SetActive(!choose);
     }
 }
