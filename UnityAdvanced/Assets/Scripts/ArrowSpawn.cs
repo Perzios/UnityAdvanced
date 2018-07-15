@@ -6,9 +6,11 @@ public class ArrowSpawn : MonoBehaviour {
 
     bool fired = false;
 
+    Rigidbody rb; 
+
     void Awake()
     {
-
+        rb = gameObject.transform.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -18,13 +20,30 @@ public class ArrowSpawn : MonoBehaviour {
         if (GameManager.Instance.InputController.isShoot)
         {
             fired = true;
-            transform.GetComponent<Rigidbody>().AddForce(transform.forward * 500f);
+            rb.velocity = Vector3.zero;
+            rb.AddRelativeForce(Vector3.forward * 1000f);
+            DestroyArrow();
         }
 
         if (fired)
         {
-            Destroy(gameObject, 10f);
+            arrowDrop();
         }
+    }
+
+    void arrowDrop() {
+        float yVelocity = rb.velocity.y;
+        float zVelocity = rb.velocity.z;
+        float xVelocity = rb.velocity.x;
+        float comVelocity = Mathf.Sqrt(xVelocity * xVelocity  + zVelocity * zVelocity);
+        float fallAngle = -1 * Mathf.Atan2(yVelocity , comVelocity);
+
+        transform.eulerAngles = new Vector3(fallAngle, transform.eulerAngles.y,transform.eulerAngles.x);
+    }
+
+    void DestroyArrow()
+    {
+        Destroy(gameObject, 10f);
     }
 
     private void LateUpdate()
