@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 20439649887117420}
   - component: {fileID: 124028753485032154}
   - component: {fileID: 81568037641835706}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,8 @@ GameObject:
   - component: {fileID: 23078613881676950}
   - component: {fileID: 54137326074406144}
   - component: {fileID: 114447249109908194}
-  m_Layer: 0
+  - component: {fileID: 65927450732948134}
+  m_Layer: 8
   m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1995109489455126}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.006586, y: 2.200107, z: 3.9283056}
+  m_LocalPosition: {x: -4.5512543, y: 0.06417951, z: -6.1470184}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4714351623629022}
@@ -167,6 +168,18 @@ Rigidbody:
   m_Interpolate: 2
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &65927450732948134
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1995109489455126}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.04613344, y: 0.039952736, z: 0.87}
+  m_Center: {x: 0, y: 0.0066587874, z: 0.1}
 --- !u!81 &81568037641835706
 AudioListener:
   m_ObjectHideFlags: 1

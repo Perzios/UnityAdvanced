@@ -17,7 +17,7 @@ public class ArrowSpawn : MonoBehaviour {
     void Update()
     {
 
-        if (GameManager.Instance.InputController.isShoot)
+        if (GameManager.Instance.InputController.isShoot && !fired)
         {
             fired = true;
             rb.velocity = Vector3.zero;
