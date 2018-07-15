@@ -5,7 +5,7 @@ using UnityEngine;
 public class InputController : MonoBehaviour
 {
 
-    public float Vertical, Horizontal, Shoot;
+    public float Vertical, Horizontal, Shoot , rate = 0.6f;
     public Vector2 Mouseinput;
     public bool isJump;
     public bool isAim;
@@ -13,7 +13,7 @@ public class InputController : MonoBehaviour
     public volatile bool isShoot;
     public GameObject bow, backBow;
 
-    
+    private float nextTimeToFire = 0f; 
 
     private void Awake()
     {
@@ -62,8 +62,10 @@ public class InputController : MonoBehaviour
 
 
 
-        if (isAim && Input.GetButton("Fire1"))
+        if (isAim && Input.GetButtonUp("Fire1") && Time.time >= nextTimeToFire)
         {
+            Debug.Log("JAJAJAJA");
+            nextTimeToFire = Time.time + 1f/rate;
             isShoot = true;
         }
         else
