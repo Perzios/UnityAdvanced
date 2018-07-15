@@ -10,8 +10,6 @@ public class ThirdPersonCam : MonoBehaviour {
     public Transform lookAt;
     public Transform camTransform;
 
-    private Camera cam;
-
     public float dist;
     private float currentX = 0.0f;
     private float currentY = 20.0f;
@@ -20,7 +18,6 @@ public class ThirdPersonCam : MonoBehaviour {
 
     private void Start() {
         camTransform = transform;
-        cam = Camera.main;
     }
 
     private void Update()
