@@ -11,14 +11,15 @@ public class InputController : MonoBehaviour
     public bool isAim;
     public bool Equip = false, isEquip;
     public volatile bool isShoot;
-    public GameObject bow, backBow;
+    public GameObject bow, backBow , spawn;
 
-    private float nextTimeToFire = 0f; 
+    public float nextTimeToFire = 0f; 
 
     private void Awake()
     {
         bow = GameObject.FindGameObjectWithTag("Bow");
-        bow.SetActive(false);
+        spawn = GameObject.FindGameObjectWithTag("Launch");
+        bow.SetActive(false);        
 
         backBow = GameObject.FindGameObjectWithTag("Back");
         backBow.SetActive(true);
