@@ -23,6 +23,8 @@ public class Player : MonoBehaviour {
 
     public PlayerAim playerAim;
 
+    public GameObject target;
+
     private MoveController m_MoveController;
     public MoveController MoveController {
         get {
@@ -30,6 +32,18 @@ public class Player : MonoBehaviour {
                 m_MoveController = GetComponent<MoveController>();
             }
             return m_MoveController;
+        }
+    }
+
+    private Crosshair m_Crosshair;
+    public Crosshair Crosshair{
+        get
+        {
+            if (m_Crosshair == null)
+            {
+                m_Crosshair = GetComponentInChildren<Crosshair>();
+            }
+            return m_Crosshair;
         }
     }
 
@@ -55,6 +69,11 @@ public class Player : MonoBehaviour {
         MoveController.Move(dir);
 
         playerAim.setRotation(mouseI.y * MouseControl.Sensitivity.y);
+        if (target.activeInHierarchy) {
+            Crosshair.LookHeight(mouseI.y * MouseControl.Sensitivity.y);
+        }
+        
+
 
         if (Input.GetKeyDown("escape"))
         {

@@ -63,7 +63,7 @@ public class InputController : MonoBehaviour
 
 
 
-        if (isAim && Input.GetButtonUp("Fire1") && Time.time >= nextTimeToFire)
+        if (isAim && Input.GetButtonUp("Fire1") && Time.time >= nextTimeToFire + 0.1f)
         {
             nextTimeToFire = Time.time + 1f/rate;
             isShoot = true;

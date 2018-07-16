@@ -14,7 +14,7 @@ public class Shooter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(GameManager.Instance.InputController.isAim && (Time.time >= GameManager.Instance.InputController.nextTimeToFire - 0.1f) && loaded == false) {
+        if(GameManager.Instance.InputController.isAim && (Time.time >= GameManager.Instance.InputController.nextTimeToFire) && loaded == false) {
             Instantiate(arrow, spawn.position,spawn.rotation);
             loaded = true;
         }
