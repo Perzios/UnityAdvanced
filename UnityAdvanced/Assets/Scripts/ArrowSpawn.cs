@@ -20,6 +20,7 @@ public class ArrowSpawn : MonoBehaviour {
         if (GameManager.Instance.InputController.isShoot && !fired)
         {
             fired = true;
+            rb.useGravity = true;
             rb.velocity = Vector3.zero;
             rb.AddRelativeForce(Vector3.forward * 1000f);
             DestroyArrow();

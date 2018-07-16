@@ -24,8 +24,6 @@ public class Crosshair : MonoBehaviour {
     private void OnGUI()
     {
         Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
-        //screenPos.y = Screen.height - screenPos.y;
-        //GUI.DrawTexture(new Rect(screenPos.x,screenPos.y - lookHeight,50f,50f) , image);
         GUI.DrawTexture(new Rect((Screen.width / 2) - (crosshairSize / 2), (Screen.height / 2) - (crosshairSize / 2), crosshairSize, crosshairSize), image);
     }
 }

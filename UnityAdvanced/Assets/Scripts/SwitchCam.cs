@@ -64,7 +64,7 @@ public class SwitchCam : MonoBehaviour {
 
         IEnumerator aimChange()
         {  
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.3f);
             FirstCam.SetActive(false);
             ThirdCam.SetActive(false);
             RotCam.SetActive(false);
