@@ -24,7 +24,7 @@ public class SwitchCam : MonoBehaviour {
             StartCoroutine(camChange());
         }
         else if (GameManager.Instance.InputController.isAim) {
-            //StartCoroutine(aimChange());
+            StartCoroutine(aimChange());
         } else if (GameManager.Instance.InputController.isAim == false) {
             StartCoroutine(camChange());
         }
