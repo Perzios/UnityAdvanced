@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class crosshair : MonoBehaviour {
+public class SoundManger : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
