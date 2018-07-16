@@ -11,23 +11,29 @@ public class AimCamController : MonoBehaviour {
 
     public Transform target;
 
-    // Use this for initialization
     void Start()
     {
         toon = this.transform.parent.gameObject;
     }
 
-    // Update is called once per frame
-    void Update()
+    void LateUpdate()
+    {
+        StartCoroutine(wait());        
+    }
+
+    private void Update()
     {
         var md = GameManager.Instance.InputController.Mouseinput;
         md = Vector2.Scale(md, new Vector2(sens * smooth, sens * smooth));
         smoothV.x = Mathf.Lerp(smoothV.x, md.x, 1f / smooth);
         smoothV.y = Mathf.Lerp(smoothV.y, md.y, 1f / smooth);
         mouseLook += smoothV;
-        mouseLook.y = Mathf.Clamp(mouseLook.y, -40f, 60f);
-        //transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
-        transform.LookAt(target.position);
         toon.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, toon.transform.up);
+    }
+
+    IEnumerator wait()
+    {
+        yield return new WaitForSecondsRealtime(0.7f);
+        transform.LookAt(target.position);
     }
 }

@@ -816,7 +816,7 @@ GameObject:
   - component: {fileID: 54847806194942288}
   m_Layer: 0
   m_Name: erika_archer_bow_arrow
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2359,6 +2359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42a24c55844b2d447a7aba947a953b17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eq: 0
 --- !u!114 &114787155747047758
 MonoBehaviour:
   m_ObjectHideFlags: 1

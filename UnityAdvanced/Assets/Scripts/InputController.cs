@@ -53,11 +53,11 @@ public class InputController : MonoBehaviour
 
         if (Equip == false && isAim != true)
         {
-            StartCoroutine(Example(Equip));
+            StartCoroutine(Switcher(Equip));
         }
         else if (Equip == true)
         {
-            StartCoroutine(Example(Equip));
+            StartCoroutine(Switcher(Equip));
         }
 
 
@@ -74,7 +74,7 @@ public class InputController : MonoBehaviour
         }
     }
 
-    IEnumerator Example(bool choose)
+    IEnumerator Switcher(bool choose)
     {
         yield return new WaitForSecondsRealtime(0.5f);
         bow.SetActive(choose);
