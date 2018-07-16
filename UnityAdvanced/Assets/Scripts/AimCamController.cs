@@ -11,14 +11,10 @@ public class AimCamController : MonoBehaviour {
 
     public Transform target;
 
-    void Start()
+    void Awake()
     {
         toon = this.transform.parent.gameObject;
-    }
-
-    void LateUpdate()
-    {
-        StartCoroutine(wait());        
+        StartCoroutine(wait());
     }
 
     private void Update()
@@ -29,6 +25,7 @@ public class AimCamController : MonoBehaviour {
         smoothV.y = Mathf.Lerp(smoothV.y, md.y, 1f / smooth);
         mouseLook += smoothV;
         toon.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, toon.transform.up);
+        transform.LookAt(target.position);
     }
 
     IEnumerator wait()

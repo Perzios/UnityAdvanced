@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class SwitchCam : MonoBehaviour {
 
-    public GameObject FirstCam, ThirdCam , RotCam , aimCam;
+    public GameObject FirstCam, ThirdCam , RotCam , aimCam, target;
     public int camMode;
 
-	
-	
-	// Update is called once per frame
-	void Update () {
+    private void Awake()
+    {
+        target.SetActive(false);
+    }
+
+    // Update is called once per frame
+    void Update () {
         if (Input.GetButtonDown("Cam") && GameManager.Instance.InputController.isAim == false)
         {
             if (camMode == 2)
@@ -24,8 +27,10 @@ public class SwitchCam : MonoBehaviour {
             StartCoroutine(camChange());
         }
         else if (GameManager.Instance.InputController.isAim) {
+            target.SetActive(true);
             StartCoroutine(aimChange());
         } else if (GameManager.Instance.InputController.isAim == false) {
+            target.SetActive(false);
             StartCoroutine(camChange());
         }
 	}
