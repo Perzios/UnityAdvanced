@@ -23,7 +23,7 @@ public class AimCamController : MonoBehaviour {
         smoothV.x = Mathf.Lerp(smoothV.x, md.x, 1f / smooth);
         smoothV.y = Mathf.Lerp(smoothV.y, md.y, 1f / smooth);
         mouseLook += smoothV;
-        mouseLook.y = Mathf.Clamp(mouseLook.y, -40f, 50f);
+        mouseLook.y = Mathf.Clamp(mouseLook.y, -40f, 60f);
         transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
         toon.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, toon.transform.up);
     }

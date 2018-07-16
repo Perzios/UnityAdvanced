@@ -36,7 +36,7 @@ public class ArrowSpawn : MonoBehaviour {
         float zVelocity = rb.velocity.z;
         float xVelocity = rb.velocity.x;
         float comVelocity = Mathf.Sqrt(xVelocity * xVelocity  + zVelocity * zVelocity);
-        float fallAngle = -1 * Mathf.Atan2(yVelocity , comVelocity);
+        float fallAngle = -1 * Mathf.Atan2(yVelocity , comVelocity) * 180 / Mathf.PI;
 
         transform.eulerAngles = new Vector3(fallAngle, transform.eulerAngles.y,transform.eulerAngles.x);
     }

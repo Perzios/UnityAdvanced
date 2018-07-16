@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 54137326074406144}
   - component: {fileID: 114447249109908194}
   - component: {fileID: 65927450732948134}
+  - component: {fileID: 114349220094355182}
   m_Layer: 8
   m_Name: Arrow
   m_TagString: Untagged
@@ -56,7 +57,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1995109489455126}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.5512543, y: 0.06417951, z: -6.1470184}
+  m_LocalPosition: {x: 7.140088, y: 3.2922165, z: -4.250425}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4714351623629022}
@@ -178,8 +179,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.04613344, y: 0.039952736, z: 0.87}
-  m_Center: {x: 0, y: 0.0066587874, z: 0.1}
+  m_Size: {x: 0.04613344, y: 0.039952736, z: 0.75}
+  m_Center: {x: 0, y: 0.0066587874, z: 0.08}
 --- !u!81 &81568037641835706
 AudioListener:
   m_ObjectHideFlags: 1
@@ -187,6 +188,17 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1133862416254322}
   m_Enabled: 1
+--- !u!114 &114349220094355182
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1995109489455126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98474ca45e5bd2146bab1cef574bd80f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114447249109908194
 MonoBehaviour:
   m_ObjectHideFlags: 1
