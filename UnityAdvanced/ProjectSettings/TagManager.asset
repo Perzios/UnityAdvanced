@@ -8,6 +8,7 @@ TagManager:
   - Hand
   - Back
   - Launch
+  - target
   layers:
   - Default
   - TransparentFX

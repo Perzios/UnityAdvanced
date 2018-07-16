@@ -9,6 +9,8 @@ public class AimCamController : MonoBehaviour {
 
     GameObject toon;
 
+    public Transform target;
+
     // Use this for initialization
     void Start()
     {
@@ -24,7 +26,8 @@ public class AimCamController : MonoBehaviour {
         smoothV.y = Mathf.Lerp(smoothV.y, md.y, 1f / smooth);
         mouseLook += smoothV;
         mouseLook.y = Mathf.Clamp(mouseLook.y, -40f, 60f);
-        transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
+        //transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
+        transform.LookAt(target.position);
         toon.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, toon.transform.up);
     }
 }
