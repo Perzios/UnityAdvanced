@@ -6,7 +6,9 @@ public class PlayerAnimation : MonoBehaviour {
 
     Animator animator, bowAnim;
 
-    public bool eq = false;
+    bool eq = false , loaded = false;
+    public AudioClip StringPull, BowRelease;
+    public AudioSource source;
 
     private PlayerAim m_PlayerAim;
     private PlayerAim PlayerAim {
@@ -35,7 +37,17 @@ public class PlayerAnimation : MonoBehaviour {
         if (bowAnim.gameObject.active)
         {
             bowAnim.SetBool("Load", GameManager.Instance.InputController.isAim);
+            if (GameManager.Instance.InputController.isAim && loaded == false)
+            {
+                loaded = true;
+                source.PlayOneShot(StringPull);
+            }
             bowAnim.SetBool("Fire", GameManager.Instance.InputController.isShoot);
+            if (GameManager.Instance.InputController.isShoot)
+            {
+                StartCoroutine(wait());
+                source.PlayOneShot(BowRelease);
+            }
         }
         
 
@@ -68,5 +80,11 @@ public class PlayerAnimation : MonoBehaviour {
         
     }
 
-    
+    IEnumerator wait()
+    {
+        yield return new WaitForSeconds(0.5f);
+        loaded = false;
+    }
+
+
 }

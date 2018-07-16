@@ -30,19 +30,7 @@ public class GameManager{
             return m_InputController;
         }
     }
-
-    private SoundManger m_SoundManager;
-    public SoundManger SoundManager
-    {
-        get
-        {
-            if (m_SoundManager == null)
-            {
-                m_SoundManager = gObject.GetComponent<SoundManger>();
-            }
-            return m_SoundManager;
-        }
-    }
+    
 
     private Player m_LocalPlayer;
     public Player LocalPlayer {

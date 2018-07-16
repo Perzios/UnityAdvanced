@@ -6,8 +6,11 @@ public class Embed : MonoBehaviour {
 
     Rigidbody rb;
 
-	// Use this for initialization
-	void Start () {
+    public AudioClip Impact;
+    public AudioSource source;
+
+    // Use this for initialization
+    void Start () {
         rb = gameObject.transform.GetComponent<Rigidbody>();
     }
 	
@@ -23,6 +26,7 @@ public class Embed : MonoBehaviour {
 
     void EmbedArrow()
     {
+        source.PlayOneShot(Impact);
         transform.GetComponent<ArrowSpawn>().enabled = false;
         rb.velocity = Vector3.zero;
         rb.useGravity = false;
