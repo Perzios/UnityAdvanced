@@ -13,7 +13,7 @@ public class InputController : MonoBehaviour
     public volatile bool isShoot;
     public GameObject bow, backBow , spawn;
 
-    public float nextTimeToFire = 0f; 
+    public float nextTimeToFire = 1f; 
 
     private void Awake()
     {

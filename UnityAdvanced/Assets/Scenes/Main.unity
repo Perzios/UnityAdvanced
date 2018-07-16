@@ -192,6 +192,11 @@ Prefab:
       propertyPath: cam3
       value: 
       objectReference: {fileID: 130403131}
+    - target: {fileID: 114694106147576490, guid: 2cf798a1602a5cd4d84db3c0d87ec0a7,
+        type: 2}
+      propertyPath: image
+      value: 
+      objectReference: {fileID: 2800000, guid: 2e2ed5863aefcd749bc7946f12710cc1, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2cf798a1602a5cd4d84db3c0d87ec0a7, type: 2}
   m_IsPrefabParent: 0
