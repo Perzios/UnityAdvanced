@@ -28,6 +28,7 @@ public class Embed : MonoBehaviour {
     {
         source.PlayOneShot(Impact);
         transform.GetComponent<ArrowSpawn>().enabled = false;
+        transform.GetComponentInChildren<FlameAudio>().StopPlay();
         rb.velocity = Vector3.zero;
         rb.useGravity = false;
         rb.isKinematic = true;
