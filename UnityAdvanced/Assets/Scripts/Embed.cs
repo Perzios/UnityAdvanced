@@ -22,6 +22,12 @@ public class Embed : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(rb.transform.position, rb.transform.forward, out hit, 0.6f) && embeded == false)
         {
+            Destructible destroy = hit.transform.GetComponent<Destructible>();
+
+            if (destroy != null) {
+                destroy.breakObj();
+            }
+
             embeded = true;
 
             EmbedArrow();
