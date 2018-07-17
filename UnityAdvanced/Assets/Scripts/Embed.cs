@@ -6,42 +6,27 @@ public class Embed : MonoBehaviour
 {
 
     Rigidbody rb;
-    Transform gb;
 
     public AudioClip Impact;
     public AudioSource source;
 
     bool embeded = false;
 
-    // Use this for initialization
     void OnEnable()
     {
         rb = gameObject.transform.GetComponent<Rigidbody>();
-        gb = gameObject.transform.Find("caster");
     }
 
-    // Update is called once per frame
-   /* void Update()
+    void LateUpdate()
     {
         RaycastHit hit;
-        if (Physics.Raycast(gb.transform.position, gb.transform.forward, out hit, 0.1f) && embeded == false)
+        if (Physics.Raycast(rb.transform.position, rb.transform.forward, out hit, 0.6f) && embeded == false)
         {
             embeded = true;
-            Debug.Log(hit.transform.name);
-            rb.velocity = Vector3.zero;
-            rb.isKinematic = true;
-            rb.useGravity = false;
-            transform.SetParent(hit.transform);
 
             EmbedArrow();
-            
+            transform.SetParent(hit.transform);
         }
-    }*/
-
-    private void OnTriggerEnter(Collider other)
-    {
-        EmbedArrow();
-        transform.SetParent(other.transform);
     }
 
     void EmbedArrow()
@@ -53,7 +38,7 @@ public class Embed : MonoBehaviour
         rb.velocity = Vector3.zero;
         rb.isKinematic = true;
         rb.useGravity = false;
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, 7f);
         rb.isKinematic = false;
     }
 }

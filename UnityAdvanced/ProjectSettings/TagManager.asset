@@ -9,6 +9,7 @@ TagManager:
   - Back
   - Launch
   - target
+  - caster
   layers:
   - Default
   - TransparentFX
