@@ -40,7 +40,7 @@ public class PlayerAnimation : MonoBehaviour
         animator.SetBool("Shoot", GameManager.Instance.InputController.isShoot);
         animator.SetBool("isEquip", GameManager.Instance.InputController.isEquip);
 
-        if (bowAnim.gameObject.active)
+        if (bowAnim.gameObject.activeInHierarchy)
         {
             bowAnim.SetBool("Load", GameManager.Instance.InputController.isAim);
             if (GameManager.Instance.InputController.isAim && loaded == false)

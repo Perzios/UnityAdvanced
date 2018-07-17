@@ -78,10 +78,6 @@ public class Player : MonoBehaviour
         MoveController.Move(dir);
 
         playerAim.setRotation(mouseI.y * MouseControl.Sensitivity.y);
-        if (target.activeInHierarchy)
-        {
-            Crosshair.LookHeight(mouseI.y * MouseControl.Sensitivity.y);
-        }
 
 
 
