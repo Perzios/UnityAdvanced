@@ -22,17 +22,19 @@ public class Embed : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         EmbedArrow();
+        transform.SetParent(other.transform);
     }
 
     void EmbedArrow()
     {
         source.PlayOneShot(Impact);
         transform.GetComponent<ArrowSpawn>().enabled = false;
-        //transform.GetComponentInChildren(ParticleAnimator).enabled = false;
+        transform.GetComponentInChildren<ParticleSystem>().Stop();
         transform.GetComponentInChildren<FlameAudio>().StopPlay();
         rb.velocity = Vector3.zero;
         rb.useGravity = false;
         rb.isKinematic = true;
         Destroy(gameObject, 5f);
+        rb.isKinematic = false;
     }
 }

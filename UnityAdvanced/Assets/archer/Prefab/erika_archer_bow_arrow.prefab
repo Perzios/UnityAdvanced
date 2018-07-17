@@ -2790,7 +2790,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1409643383366300}
   m_LocalRotation: {x: -0.124438085, y: 0.027690716, z: -0.0034742714, w: -0.9918348}
-  m_LocalPosition: {x: 0.44, y: 1.356, z: -0.09}
+  m_LocalPosition: {x: 0.441, y: 1.305, z: -0.103}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4302663963280876}
@@ -4725,13 +4725,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1373849695267932}
-  m_LocalRotation: {x: -0.07120684, y: -0.7035124, z: -0.071206905, w: 0.70351225}
+  m_LocalRotation: {x: -0.06364551, y: -0.7710053, z: -0.0780371, w: 0.6288166}
   m_LocalPosition: {x: -0.526, y: 1.381, z: 0.031}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4124068356787394}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -11.559001, y: -90.00001, z: 0}
+  m_LocalEulerAnglesHint: {x: -11.559001, y: -101.6, z: 0}
 --- !u!4 &4832525103627698
 Transform:
   m_ObjectHideFlags: 1
@@ -4836,7 +4836,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1528158231522456}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: -0.7071068, w: 0}
+  m_LocalRotation: {x: 0.03682222, y: -0.70614743, z: -0.70614743, w: -0.03682222}
   m_LocalPosition: {x: -0.789, y: 1.393, z: -0.054}
   m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
   m_Children:
@@ -4844,7 +4844,7 @@ Transform:
   - {fileID: 4330421589213822}
   m_Father: {fileID: 4124068356787394}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 270, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 270, y: -5.97, z: 180}
 --- !u!4 &4890513617069420
 Transform:
   m_ObjectHideFlags: 1
@@ -5107,7 +5107,7 @@ Camera:
     height: 1
   near clip plane: 0.01
   far clip plane: 1000
-  field of view: 60
+  field of view: 56
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -5358,7 +5358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a64c3e007c7f9684e997e0fa72496db1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 2800000, guid: 54539420bd1453f4e816421cca4b2ddd, type: 3}
+  image: {fileID: 2800000, guid: 2e2ed5863aefcd749bc7946f12710cc1, type: 3}
   crosshairSize: 30
 --- !u!114 &114723901315039844
 MonoBehaviour:
