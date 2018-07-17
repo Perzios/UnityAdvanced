@@ -518,6 +518,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cube: {fileID: 1563520210659272, guid: 0736d7c3927d16048b28960a783000a1, type: 2}
+  crate: {fileID: 1000011275823026, guid: c4fa03dde2a5a52439028e5fba052e5c, type: 2}
+  bottle: {fileID: 1000013120505474, guid: 991c87290ffb77d449861b8c11415b73, type: 2}
+  flameCrate: {fileID: 1370666447244810, guid: 9bca47516be0b6c4e92f90786b24043b, type: 2}
+  cubeAmount: 50
+  crateAmount: 10
+  bottleAmount: 10
+  flameAmount: 1
 --- !u!4 &1809429605
 Transform:
   m_ObjectHideFlags: 0

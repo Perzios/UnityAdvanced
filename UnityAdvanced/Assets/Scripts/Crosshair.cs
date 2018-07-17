@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Crosshair : MonoBehaviour {
+public class Crosshair : MonoBehaviour
+{
 
     [SerializeField]
     Texture2D image;
@@ -10,13 +11,14 @@ public class Crosshair : MonoBehaviour {
     [SerializeField]
     float crosshairSize;
 
-    float lookHeight , maxAngle = 60f, minAngle = -60f;
+    float lookHeight, maxAngle = 60f, minAngle = -60f;
 
     public void LookHeight(float val)
     {
         lookHeight += val;
 
-        if (lookHeight > maxAngle || lookHeight < minAngle) {
+        if (lookHeight > maxAngle || lookHeight < minAngle)
+        {
             lookHeight -= val;
         }
     }

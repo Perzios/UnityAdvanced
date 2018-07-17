@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlameAudio : MonoBehaviour {
+public class FlameAudio : MonoBehaviour
+{
 
     public AudioClip burn;
     public AudioSource source;
@@ -10,10 +11,11 @@ public class FlameAudio : MonoBehaviour {
     private void Awake()
     {
         source.clip = burn;
-        source.Play();       
+        source.Play();
     }
 
-    public void StopPlay() {
+    public void StopPlay()
+    {
         source.Stop();
     }
 }

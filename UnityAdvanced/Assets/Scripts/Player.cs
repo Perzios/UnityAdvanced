@@ -4,10 +4,12 @@ using UnityEngine;
 
 [RequireComponent(typeof(MoveController))]
 
-public class Player : MonoBehaviour {
+public class Player : MonoBehaviour
+{
 
     [System.Serializable]
-    public class MouseInput {
+    public class MouseInput
+    {
         public Vector2 Damping;
         public Vector2 Sensitivity;
     }
@@ -26,9 +28,12 @@ public class Player : MonoBehaviour {
     public GameObject target;
 
     private MoveController m_MoveController;
-    public MoveController MoveController {
-        get {
-            if (m_MoveController == null) {
+    public MoveController MoveController
+    {
+        get
+        {
+            if (m_MoveController == null)
+            {
                 m_MoveController = GetComponent<MoveController>();
             }
             return m_MoveController;
@@ -36,7 +41,8 @@ public class Player : MonoBehaviour {
     }
 
     private Crosshair m_Crosshair;
-    public Crosshair Crosshair{
+    public Crosshair Crosshair
+    {
         get
         {
             if (m_Crosshair == null)
@@ -48,18 +54,21 @@ public class Player : MonoBehaviour {
     }
 
     InputController playerInput;
-    
-	void Awake () {
+
+    void Awake()
+    {
         playerInput = GameManager.Instance.InputController;
         GameManager.Instance.LocalPlayer = this;
         Cursor.lockState = CursorLockMode.Locked;
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         float moveSpeed = runSpeed;
 
-        if (playerInput.isAim) {
+        if (playerInput.isAim)
+        {
             moveSpeed = Aimspeed;
         }
 
@@ -69,10 +78,11 @@ public class Player : MonoBehaviour {
         MoveController.Move(dir);
 
         playerAim.setRotation(mouseI.y * MouseControl.Sensitivity.y);
-        if (target.activeInHierarchy) {
+        if (target.activeInHierarchy)
+        {
             Crosshair.LookHeight(mouseI.y * MouseControl.Sensitivity.y);
         }
-        
+
 
 
         if (Input.GetKeyDown("escape"))

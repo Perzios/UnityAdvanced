@@ -5,21 +5,21 @@ using UnityEngine;
 public class InputController : MonoBehaviour
 {
 
-    public float Vertical, Horizontal, Shoot , rate = 0.6f;
+    public float Vertical, Horizontal, Shoot, rate = 0.6f;
     public Vector2 Mouseinput;
     public bool isJump;
     public bool isAim;
     public bool Equip = false, isEquip;
     public volatile bool isShoot;
-    public GameObject bow, backBow , spawn;
+    public GameObject bow, backBow, spawn;
 
-    public float nextTimeToFire = 1f; 
+    public float nextTimeToFire = 1f;
 
     private void Awake()
     {
         bow = GameObject.FindGameObjectWithTag("Bow");
         spawn = GameObject.FindGameObjectWithTag("Launch");
-        bow.SetActive(false);        
+        bow.SetActive(false);
 
         backBow = GameObject.FindGameObjectWithTag("Back");
         backBow.SetActive(true);
@@ -34,7 +34,8 @@ public class InputController : MonoBehaviour
         isJump = Input.GetButton("Jump");
         isAim = Input.GetButton("Fire2");
 
-        if (!isAim) {
+        if (!isAim)
+        {
             isEquip = Input.GetButtonDown("Equip");
         }
 
@@ -65,7 +66,7 @@ public class InputController : MonoBehaviour
 
         if (isAim && Input.GetButtonUp("Fire1") && Time.time >= nextTimeToFire + 0.1f)
         {
-            nextTimeToFire = Time.time + 1f/rate;
+            nextTimeToFire = Time.time + 1f / rate;
             isShoot = true;
         }
         else

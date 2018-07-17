@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Embed : MonoBehaviour {
+public class Embed : MonoBehaviour
+{
 
     Rigidbody rb;
 
@@ -10,14 +11,16 @@ public class Embed : MonoBehaviour {
     public AudioSource source;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         rb = gameObject.transform.GetComponent<Rigidbody>();
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     private void OnTriggerEnter(Collider other)
     {

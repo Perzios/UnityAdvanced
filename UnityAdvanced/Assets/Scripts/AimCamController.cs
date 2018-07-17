@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AimCamController : MonoBehaviour {
+public class AimCamController : MonoBehaviour
+{
 
     Vector2 mouseLook, smoothV;
     public float sens = 5.0f, smooth = 5.0f;

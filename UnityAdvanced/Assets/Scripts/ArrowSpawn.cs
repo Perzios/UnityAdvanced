@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArrowSpawn : MonoBehaviour {
+public class ArrowSpawn : MonoBehaviour
+{
 
     bool fired = false;
 
-    Rigidbody rb; 
+    Rigidbody rb;
 
     void Awake()
     {
@@ -26,25 +27,27 @@ public class ArrowSpawn : MonoBehaviour {
         }
     }
 
-    void arrowDrop() {
+    void arrowDrop()
+    {
         float yVelocity = rb.velocity.y;
         float zVelocity = rb.velocity.z;
         float xVelocity = rb.velocity.x;
-        float comVelocity = Mathf.Sqrt(xVelocity * xVelocity  + zVelocity * zVelocity);
-        float fallAngle = -1 * Mathf.Atan2(yVelocity , comVelocity) * 180 / Mathf.PI;
+        float comVelocity = Mathf.Sqrt(xVelocity * xVelocity + zVelocity * zVelocity);
+        float fallAngle = -1 * Mathf.Atan2(yVelocity, comVelocity) * 180 / Mathf.PI;
 
-        transform.eulerAngles = new Vector3(fallAngle, transform.eulerAngles.y,transform.eulerAngles.x);
+        transform.eulerAngles = new Vector3(fallAngle, transform.eulerAngles.y, transform.eulerAngles.x);
     }
 
-    
+
 
     private void LateUpdate()
     {
-        if (!fired) {
+        if (!fired)
+        {
             transform.SetPositionAndRotation(GameManager.Instance.InputController.spawn.transform.position, GameManager.Instance.InputController.spawn.transform.rotation);
         }
 
-        if (GameManager.Instance.InputController.isAim == false  && fired == false)
+        if (GameManager.Instance.InputController.isAim == false && fired == false)
         {
             Destroy(gameObject, 0.01f);
         }

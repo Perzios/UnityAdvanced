@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwitchCam : MonoBehaviour {
+public class SwitchCam : MonoBehaviour
+{
 
-    public GameObject FirstCam, ThirdCam , RotCam , aimCam, target;
+    public GameObject FirstCam, ThirdCam, RotCam, aimCam, target;
     public int camMode;
 
     private void Awake()
@@ -13,7 +14,8 @@ public class SwitchCam : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update()
+    {
         if (Input.GetButtonDown("Cam") && GameManager.Instance.InputController.isAim == false)
         {
             if (camMode == 2)
@@ -26,14 +28,17 @@ public class SwitchCam : MonoBehaviour {
             }
             StartCoroutine(camChange());
         }
-        else if (GameManager.Instance.InputController.isAim) {
+        else if (GameManager.Instance.InputController.isAim)
+        {
             target.SetActive(true);
             StartCoroutine(aimChange());
-        } else if (GameManager.Instance.InputController.isAim == false) {
+        }
+        else if (GameManager.Instance.InputController.isAim == false)
+        {
             target.SetActive(false);
             StartCoroutine(camChange());
         }
-	}
+    }
 
     IEnumerator camChange()
     {
@@ -62,12 +67,12 @@ public class SwitchCam : MonoBehaviour {
     }
 
 
-        IEnumerator aimChange()
-        {  
-            yield return new WaitForSeconds(0.3f);
-            FirstCam.SetActive(false);
-            ThirdCam.SetActive(false);
-            RotCam.SetActive(false);
-            aimCam.SetActive(true);
-        }
+    IEnumerator aimChange()
+    {
+        yield return new WaitForSeconds(0.3f);
+        FirstCam.SetActive(false);
+        ThirdCam.SetActive(false);
+        RotCam.SetActive(false);
+        aimCam.SetActive(true);
     }
+}
