@@ -521,10 +521,11 @@ MonoBehaviour:
   crate: {fileID: 1000011275823026, guid: c4fa03dde2a5a52439028e5fba052e5c, type: 2}
   bottle: {fileID: 1000013120505474, guid: 991c87290ffb77d449861b8c11415b73, type: 2}
   flameCrate: {fileID: 1370666447244810, guid: 9bca47516be0b6c4e92f90786b24043b, type: 2}
-  cubeAmount: 50
+  sphere: {fileID: 1898427236360524, guid: aadef721ce1724f42abb30bb873ccb5c, type: 2}
+  capsule: {fileID: 1364069466903712, guid: e363cf0adf59f11448a190a107c93f44, type: 2}
+  PrimitiveAmount: 50
   crateAmount: 10
   bottleAmount: 10
-  flameAmount: 1
 --- !u!4 &1809429605
 Transform:
   m_ObjectHideFlags: 0

@@ -5,15 +5,28 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
 
-    public GameObject cube, crate, bottle, flameCrate;
-    public float cubeAmount, crateAmount, bottleAmount;
+    public GameObject cube, crate, bottle, flameCrate, sphere, capsule;
+    public float PrimitiveAmount, crateAmount, bottleAmount;
 
     void Awake()
     {
-        for (int i = 0; i < cubeAmount; i++)
+        for (int i = 0; i < PrimitiveAmount; i++)
         {
-            Vector3 spawnPosition = getVecCube();
-            Instantiate(cube, spawnPosition, transform.rotation);
+            Vector3 spawnPosition = getVecPrimitive();
+            int ran = Random.Range(0, 3);
+            if (ran == 0)
+            {
+                Instantiate(cube, spawnPosition, transform.rotation);
+            }
+            else if (ran == 1)
+            {
+                Instantiate(sphere, spawnPosition, transform.rotation);
+            }
+            else
+            {
+                Instantiate(capsule, spawnPosition, transform.rotation);
+            }
+
         }
 
         for (int i = 0; i < crateAmount; i++)
@@ -32,7 +45,7 @@ public class Spawner : MonoBehaviour
         Instantiate(flameCrate, spawn, transform.rotation);
     }
 
-    private Vector3 getVecCube()
+    private Vector3 getVecPrimitive()
     {
         int ran = Random.Range(0, 4);
         if (ran == 0)
