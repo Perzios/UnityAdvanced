@@ -23,12 +23,6 @@ public class ArrowSpawn : MonoBehaviour {
             rb.useGravity = true;
             rb.velocity = Vector3.zero;
             rb.AddRelativeForce(Vector3.forward * 1000f);
-            DestroyArrow();
-        }
-
-        if (fired)
-        {
-            arrowDrop();
         }
     }
 
@@ -42,10 +36,7 @@ public class ArrowSpawn : MonoBehaviour {
         transform.eulerAngles = new Vector3(fallAngle, transform.eulerAngles.y,transform.eulerAngles.x);
     }
 
-    void DestroyArrow()
-    {
-        Destroy(gameObject, 10f);
-    }
+    
 
     private void LateUpdate()
     {
