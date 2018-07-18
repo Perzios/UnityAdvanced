@@ -24,7 +24,8 @@ public class Embed : MonoBehaviour
         {
             Destructible destroy = hit.transform.GetComponent<Destructible>();
 
-            if (destroy != null) {
+            if (destroy != null)
+            {
                 destroy.breakObj();
             }
 

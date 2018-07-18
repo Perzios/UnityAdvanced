@@ -24,7 +24,7 @@ public class ArrowSpawn : MonoBehaviour
             gameObject.transform.GetComponent<Embed>().enabled = true;
             rb.useGravity = true;
             rb.velocity = Vector3.zero;
-            rb.AddRelativeForce(Vector3.forward * 1000f);
+            rb.AddRelativeForce(Vector3.forward * 1500f);
         }
     }
 
