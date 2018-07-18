@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColorSelect : MonoBehaviour {
+public class ColorSelect : MonoBehaviour
+{
 
-    public Material red,blue,yellow;
+    public Material red, blue, yellow;
 
     private void Awake()
     {
-        int ran = Random.Range(0,3);
+        int ran = Random.Range(0, 3);
         Material temp = red; // Default
-         if(ran ==1)
+        if (ran == 1)
         {
             temp = blue;
         }

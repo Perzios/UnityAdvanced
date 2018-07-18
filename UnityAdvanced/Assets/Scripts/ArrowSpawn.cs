@@ -14,7 +14,6 @@ public class ArrowSpawn : MonoBehaviour
         rb = gameObject.transform.GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -43,11 +42,12 @@ public class ArrowSpawn : MonoBehaviour
 
     private void LateUpdate()
     {
+        //Reposition to correct location on bow if the arrow has not yet been fired
         if (!fired)
         {
             transform.SetPositionAndRotation(GameManager.Instance.InputController.spawn.transform.position, GameManager.Instance.InputController.spawn.transform.rotation);
         }
-
+        //Destroys arrow if player exits aim mode
         if (GameManager.Instance.InputController.isAim == false && fired == false)
         {
             Destroy(gameObject, 0.01f);

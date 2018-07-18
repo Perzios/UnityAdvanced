@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotationCam : MonoBehaviour {
+public class RotationCam : MonoBehaviour
+{
 
     private const float Y_ANGLE_MIN = 10.0f;
     private const float Y_ANGLE_MAX = 50.0f;
@@ -17,15 +18,17 @@ public class RotationCam : MonoBehaviour {
     private float sensitivityY = 0.5f;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         currentY += Input.GetAxis("Mouse Y") * sensitivityY;
         currentX += 15.0f * sensitivityX * Time.deltaTime;
         dist -= Input.GetAxis("Mouse ScrollWheel");
-        currentY = Mathf.Clamp(currentY, Y_ANGLE_MIN, Y_ANGLE_MAX);        
+        currentY = Mathf.Clamp(currentY, Y_ANGLE_MIN, Y_ANGLE_MAX);
         dist = Mathf.Clamp(dist, 5.0f, 12.0f);
     }
 

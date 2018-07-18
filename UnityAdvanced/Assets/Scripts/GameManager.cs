@@ -25,6 +25,7 @@ public class GameManager
         }
     }
 
+    //Allow access to InputController values
     private InputController m_InputController;
     public InputController InputController
     {
@@ -38,6 +39,7 @@ public class GameManager
         }
     }
 
+    //Allow access to LocalPlayer values
     private Player m_LocalPlayer;
     public Player LocalPlayer
     {

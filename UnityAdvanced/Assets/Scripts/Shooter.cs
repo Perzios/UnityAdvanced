@@ -10,10 +10,6 @@ public class Shooter : MonoBehaviour
 
     private bool loaded = false;
 
-    void Awake()
-    {
-    }
-
     // Update is called once per frame
     void Update()
     {
